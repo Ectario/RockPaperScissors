@@ -15,6 +15,7 @@ SOURCES += \
 
 HEADERS += \
     bot.h \
+    hand.h \
     mainwindow.h
 
 FORMS += \

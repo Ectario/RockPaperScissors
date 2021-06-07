@@ -9,7 +9,6 @@ QPushButton* scissorsButton;
 QWidget * widget;
 QVBoxLayout * vlayout;
 
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
