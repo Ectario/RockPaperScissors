@@ -9,7 +9,7 @@ It's a basic graphic game of Rock Paper Scissors in C++ (with Qt Framework).
 The installation of Qt is required as well as the cloning of the project. (if you don't have git,
 the steps below also explain how to install git) :
 
-### Linux Distro
+### Debian-based Linux Distro
 
 - Get Qt : https://doc.qt.io/qt-5/linux.html 
 - After the installation of Qt, you need to clone the project : 
