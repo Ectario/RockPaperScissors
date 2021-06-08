@@ -2,9 +2,10 @@
 #define HAND_H
 
 enum class Hand {
-    Paper,
-    Rock,
-    Scissors
+    PAPER,
+    ROCK,
+    SCISSORS,
+    HAND_COUNT = 3 //used just for the random generation
 };
 
 #endif // HAND_H
