@@ -8,6 +8,7 @@ public:
     Bot();
     void chooseHand();
     unsigned int getNbVictory();
+    void addVictory();
     Hand getHand();
 private:
     unsigned int nbVictory;

@@ -5,6 +5,7 @@
 
 Bot::Bot()
 {
+    srand(time(NULL));
     unsigned int nbVictory = 0;
     Hand hand;
     chooseHand();
@@ -15,9 +16,13 @@ Hand Bot::getHand()
     return this->hand;
 }
 
+void Bot::addVictory()
+{
+    this->nbVictory++;
+}
+
 void Bot::chooseHand()
 {
-    srand(time(NULL));
     this->hand = static_cast<Hand>(rand() % (int) (Hand::HAND_COUNT));
 }
 

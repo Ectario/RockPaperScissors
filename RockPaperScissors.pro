@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     bot.cpp \
+    hand.cpp \
     main.cpp \
     mainwindow.cpp
 
