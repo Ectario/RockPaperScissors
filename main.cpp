@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include <string.h>
+#include <string>
 #include <QDebug>
 #include <Hand.h>
 #include <QPushButton>
@@ -34,6 +34,7 @@ inline const char* handToString(Hand h)
 void handleRockButton();
 void handlePaperButton();
 void handleScissorsButton();
+void refreshText();
 
 int main(int argc, char *argv[])
 {
@@ -63,9 +64,9 @@ int main(int argc, char *argv[])
 
     //END Basic Display
 
-    textLabel = new QLabel(("Bot hand :\n\n" + (string) handToString(bot->getHand())).c_str());
-    textLabel->setFont(QFont("Comic Sans MS", 48, QFont::Normal, false));
-    textLabel->setAlignment(Qt::AlignHCenter);;
+    textLabel = new QLabel("Waiting results");
+    textLabel->setFont(QFont("Comic Sans MS", 35, QFont::Normal, false));
+    textLabel->setAlignment(Qt::AlignCenter);;
     textLabel->setStyleSheet("border-width: 1px; border-style: solid; border-radius: 0px;");
     vlayout->addWidget(textLabel);
 
@@ -82,21 +83,32 @@ int main(int argc, char *argv[])
     return app.exec();
 }
 
+void refreshText(int BATTLE_ISSUE){
+    string result;
+    switch (BATTLE_ISSUE) {
+        case WIN : result = "Won"; break;
+        case LOOSE: result = "Lose"; break;
+        case EQUAL: result = "Equal"; break;
+        default: result = "Undefined"; break;
+    }
+    textLabel->setText((("Last Bot hand :\n" + (string) handToString(bot->getHand())) + "\n" + "Results : " + result).c_str());
+}
 
 void handleRockButton(){
-    qDebug() << handToString(bot->getHand()) << " vs " << handToString(Hand::ROCK) << " : "<< battle(Hand::ROCK, bot->getHand());
+    int result = battle(Hand::ROCK, bot->getHand());
+    refreshText(result);
     bot->chooseHand();
-    textLabel->setText((("Bot hand :\n\n" + (string) handToString(bot->getHand())).c_str()));
 }
 
 void handlePaperButton(){
-    qDebug() << handToString(bot->getHand()) << " vs " << handToString(Hand::PAPER) << " : "<< battle(Hand::PAPER, bot->getHand());
+    int result = battle(Hand::PAPER, bot->getHand());
+    refreshText(result);
     bot->chooseHand();
-    textLabel->setText((("Bot hand :\n\n" + (string) handToString(bot->getHand())).c_str()));
 }
 
 void handleScissorsButton(){
-    qDebug() << handToString(bot->getHand()) << " vs " << handToString(Hand::SCISSORS) << " : " << battle(Hand::SCISSORS, bot->getHand());
+    int result = battle(Hand::SCISSORS, bot->getHand());
+    refreshText(result);
     bot->chooseHand();
-    textLabel->setText((("Bot hand :\n\n" + (string) handToString(bot->getHand())).c_str()));
 }
+
