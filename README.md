@@ -27,7 +27,7 @@ the steps below also explain how to install git) :
 
 ## Usage
 
-All you have to do is click on the next hand shape. For that there are 3 buttons: Rock, Paper, Scissors. Just click on one of them, the bot will play automatically at the same time as you. The results will appear.
+In order to play the game all you have to do is click on your choice for the game. For that there are 3 buttons: Rock, Paper, Scissors. When you click on the button the bot will play at the same time as you and the result will be displayed below.
 
 ![RockPaperScissorsGIF](https://user-images.githubusercontent.com/61197119/121219411-f31d8080-c883-11eb-9261-b441238172f0.gif)
 
