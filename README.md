@@ -23,7 +23,7 @@ the steps below also explain how to install git) :
 - Get Qt : https://www.qt.io/download/?hsLang=en
 - After the installation of Qt, you need to clone the project :
 - - (if you don't have git) https://git-scm.com/download/win
-- - Next steps are the same than Linux at Create Folder.
+- - Next steps are the same as Linux at Create Folder.
 
 ## Usage
 
